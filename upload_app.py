@@ -6,7 +6,8 @@ from keras.applications.inception_v3 import preprocess_input
 import numpy as np
 import time
 import cv2
-tensorflow==1.8
+import tensorflow as st
+import keras
 
 
 #st.write('hello world')
