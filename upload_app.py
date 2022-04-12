@@ -56,7 +56,7 @@ def video_to_frames(input_loc, output_loc):
             print ("Done extracting frames.\n%d frames extracted" % count)
             print ("It took %d seconds forconversion." % (time_end-time_start))
             break
-    def obj_det(search, frame, model):
+def obj_det(search, frame, model):
     label = secpred(frame, model)
     label = label.lower()
     if label.find(search) > -1:
