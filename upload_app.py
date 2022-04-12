@@ -113,8 +113,8 @@ if __name__=="__main__":
     userfile= st.file_uploader("Upload a video", type=["mp4", "mov","avi"])
     input_loc = userfile
     #userin=st.text('video name')
-    st.subheader("search your object")
-    user_input=st.text_input("enter object to search")
+    #st.subheader("search your object")
+    #user_input=st.text_input("enter object to search")
     output_loc ='frames'
     video_to_frames(input_loc, output_loc)
     key = st.text_input('Search')
