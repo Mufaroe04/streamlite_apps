@@ -87,6 +87,26 @@ def video_to_frames(input_loc, output_loc):
             st.write(actual_prediction[0][0][1])
             st.write("with accuracy")
             st.write(actual_prediction[0][0][2]*100)    
+            key = st.text_input('Search')
+            key = key.lower()
+
+            if key is not None:
+
+              if st.button("Search for an object"):
+
+                # Start the video prediction loop
+                while cap.isOpened():
+                    ret, frame = cap.read()
+
+                    if not ret:
+                        break
+
+                    # Perform object detection
+                    obj_det(key, frame, model)
+
+                cap.release()
+                #output.release()
+                cv2.destroyAllWindows()
         #loading the image to predict
 if __name__=="__main__":
     st.subheader('Upload Video')
