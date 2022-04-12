@@ -117,18 +117,25 @@ if __name__=="__main__":
     user_input=st.text_input("enter object to search")
     output_loc ='frames'
     video_to_frames(input_loc, output_loc)
-    #st.subheader('video name required')
+    key = st.text_input('Search')
+    key = key.lower()
+
+    if key is not None:
+
+            if st.button("Search for an object"):
+
+                # Start the video prediction loop
+                while cap.isOpened():
+                    ret, frame = cap.read()
+
+                    if not ret:
+                        break
+
+                    # Perform object detection
+                    obj_det(key, frame, model)
+
+                cap.release()
+                #output.release()
+                cv2.destroyAllWindows()
    
-    # assign directory
-
-#else:
-   # st.subheader('video name required')
-    
-
-#if __name__=="__main__":
-
-    #input_loc = userfile
-    
-    #output_loc = userin
-    #video_to_frames(input_loc, output_loc)
     
