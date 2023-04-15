@@ -3,7 +3,8 @@ import pandas as pd
 import numpy as np
 import sys
 import tensorflow as tf
-from keras.preprocessing import image
+# from keras.preprocessing import image
+import keras.utils as image
 from tensorflow.keras.applications.inception_v3 import InceptionV3
 from keras.applications.inception_v3 import preprocess_input, decode_predictions
 import numpy as np
